@@ -2,7 +2,7 @@
 ## CI Project Overview
 - The goal of this project is to containerize an application, which in this case is going to be a website running on nginx, and to automate pipeline using GitHub actions. This allows us to gain the benefits of portable applications that containers offer. I'll be using DockerHub, Docker Desktop (except not on the desktop but in the terminal), GitHub, and nginx. 
 
-[CICD Diagram](./CICD_Diagram.svg)
+![CICD Diagram](./CICD_Diagram.svg)
 - Developers can push updates to their project (application, website...) to GitHub which will trigger an action that pushes the update to DockerHub and automatically builds and deploys a new container with the updated project.    
 
 ## Run Project Locally
