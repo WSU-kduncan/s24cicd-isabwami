@@ -1,0 +1,16 @@
+// Define groups and nodes
+Developer [icon: aws-developer-tools]
+
+GitHub [icon: github]
+
+DockerHub [icon: docker]
+
+Users [icon: gcp-cloud-deployment-manager]
+
+// Define connections
+
+Developer > GitHub : Update
+
+GitHub > DockerHub : Build via Actions
+
+DockerHub > Users : Deploy
