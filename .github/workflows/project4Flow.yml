@@ -4,6 +4,8 @@ on:
     push:
         branches:
             - 'main'
+        tags: 
+            - 'v*.*'
 
 jobs: 
     docker: 
@@ -13,15 +15,26 @@ jobs:
                 name: Checkout
                 uses: actions/checkout@v4
             - 
+                name: Docker Meta
+                id: meta
+                uses: docker/metadata-action@v5
+                with:
+                    images: 
+                        isabwami/sabwami-project4
+                    tags:
+                        type=semver, pattern={{major}.{minor}}
+                        type=semver, pattern={{major}}
+            - 
                 name: Login to Docker Hub
                 uses: docker/login-action@v3
                 with: 
                     username: ${{ secrets.DOCKER_USERNAME }}
-                    password: ${{ secrets.DOCKER_PASSWORD }}
+                    password: ${{ secrets.DOCKER_PASSWORD }}                        
             - 
                 name: Build and push Docker images
                 uses: docker/build-push-action@v5.3.0
                 with:
+                    context: .
                     push: true
-                    tags: isabwami/sabwami-project4:latest
+                    tags: ${{ steps.meta.outputs.tags }}
         
