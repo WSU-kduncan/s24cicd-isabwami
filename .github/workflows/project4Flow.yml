@@ -22,7 +22,6 @@ jobs:
                     images: 
                         isabwami/sabwami-project4
                     tags:
-                        type=ref,event=branches
                         type=semver, pattern={{major}.{minor}}
                         type=semver, pattern={{major}}
             - 
