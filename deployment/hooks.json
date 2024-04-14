@@ -1,0 +1,7 @@
+[
+  {
+    "id": "deploy",
+    "execute-command": "/home/ubuntu/Docker/deploy.sh",
+    "command-working-directory": "/home/ubuntu/Docker/webhook"
+  }
+]
