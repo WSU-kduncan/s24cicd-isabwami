@@ -22,6 +22,7 @@ jobs:
                     images: 
                         isabwami/sabwami-project4
                     tags:
+                        type=semver, pattern={{major}.{minor}.{patch}}
                         type=semver, pattern={{major}.{minor}}
                         type=semver, pattern={{major}}
             - 
