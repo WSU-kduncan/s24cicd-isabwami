@@ -19,9 +19,9 @@ jobs:
                 id: meta
                 uses: docker/metadata-action@v5
                 with:
-                    images: 
+                    images: |
                         isabwami/sabwami-project4
-                    tags:
+                    tags: |
                         type=semver, pattern={{major}.{minor}.{patch}}
                         type=semver, pattern={{major}.{minor}}
                         type=semver, pattern={{major}}
