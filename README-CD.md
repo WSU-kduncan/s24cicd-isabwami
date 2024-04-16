@@ -25,3 +25,6 @@
 ### Server-Side Webhook Configuration
 - To configure the webhook in DockerHub, I went to `Webhooks` under my repository and created a new webhook named `AWS` whos URL is `http://3.226.84.197:9000/hooks/deploy`. The webhook will be triggered only by push events.
 - To configure the webhook in GitHub, I would go to my repositor settings and under Webhooks, I would give it the webhook URL and then would specify the `Content type`, `Secret` (if any), and the events that trigger the webhook. 
+
+## Video
+[The Culmination of CI/CD Efforts](./Trust-Me-Bro-It-Works.mp4)
