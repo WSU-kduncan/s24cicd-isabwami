@@ -20,6 +20,8 @@
 - To start the `webhook`, I used `webhook -hooks hooks.json -verbose`.
 - The `webhook` definition file, `hooks.json` is what tells the webhook what it should do. The `id` field gives the hook a unique identifier, the `execute-command` field specifies what command should be run when the hook is triggered, and `command-working-directory` is used primarily for logging.
 - This definition file should be in the directory the webhook is being run from.
+- To ensure that the webhook listener is listening as soon as the system is booted, the webhook service file needed to be updated. Specifically, I had to point the service file to the directory in which my definition file was located. I changed the conditional statement to look for the hooks.json file and changed the ExecStart entry to point to the hooks.json file.
+- After modifying the webhook service file, I needed to reload the daemon using `systemctl daemon-reload` and then had to restart the webhook service with `sudo systemctl restart webhook.service`.
 ### Server-Side Webhook Configuration
 - To configure the webhook in DockerHub, I went to `Webhooks` under my repository and created a new webhook named `AWS` whos URL is `http://3.226.84.197:9000/hooks/deploy`. The webhook will be triggered only by push events.
 - To configure the webhook in GitHub, I would go to my repositor settings and under Webhooks, I would give it the webhook URL and then would specify the `Content type`, `Secret` (if any), and the events that trigger the webhook. 
