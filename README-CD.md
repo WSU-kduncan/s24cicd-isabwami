@@ -27,4 +27,4 @@
 - To configure the webhook in GitHub, I would go to my repositor settings and under Webhooks, I would give it the webhook URL and then would specify the `Content type`, `Secret` (if any), and the events that trigger the webhook. 
 
 ## Video
-[The Culmination of CI/CD Efforts](./Trust-Me-Bro-It-Works.mp4)
+![The Culmination of CI/CD Efforts](./Trust-Me-Bro-It-Works.mp4)
