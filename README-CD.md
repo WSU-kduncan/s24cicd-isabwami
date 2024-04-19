@@ -2,6 +2,9 @@
 ## CD Project Overview
 - The goal of this project is to apply deployment principles to the contents of project 4. We will be implementing `git tag` metadata to introduce semantic versioning to our website via GitHub Actions, and will then be using webhooks to automatically keep the website's production up to date whenever an update is released (AKA tagged and pushed to GitHub).
 
+![CICD Diagram](./CI_Diagram.svg)
+- With this automation, developers are only responsible for pushing a tagged version (following semantic versioning standards) to GitHub. Once it's pushed, the GitHub action will build and push a tagged image to DockerHub and DockerHub will notify any listening servers (these servers are likely hosting the content) via webhook, which will trigger a script on each server that will pull the update, stop the current container and start a new container with the new image. 
+
 ## Semantic Versioning
 - A tag in git can be generated in two ways:
     - Create and push a commit, then run `git tag -a [TAG_NAME] [COMMIT_ID]` to create the tag and `git push origin --tags` to push all tags or `git push origin [TAG_NAME]` to push a specific tag to remote (GitHub)

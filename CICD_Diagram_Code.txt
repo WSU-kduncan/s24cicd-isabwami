@@ -5,12 +5,20 @@ GitHub [icon: github]
 
 DockerHub [icon: docker]
 
-Users [icon: gcp-cloud-deployment-manager]
+Server 1 [icon: server]
+
+Server 2 [icon: server]
+
+Server 3 [icon: server]
 
 // Define connections
 
-Developer > GitHub : Update
+Developer > GitHub : Push Tagged Version
 
-GitHub > DockerHub : Build via Actions
+GitHub > DockerHub : Build and Tag Image via Actions
 
-DockerHub > Users : Deploy
+DockerHub > Server 1 : Notify via Webhook
+
+DockerHub > Server 2 : Notify via Webhook
+
+DockerHub > Server 3 : Notify via Webhook
